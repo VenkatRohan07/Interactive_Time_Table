@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A1 Timetable</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f8; padding:10px; }
+    h1 { text-align:center; }
+    table { border-collapse: collapse; width:100%; background:#fff; }
+    th, td { border:1px solid #333; padding:6px; text-align:center; font-size:13px; }
+    th { background:#eaeaea; }
+    .day { background:#f0f0f0; font-weight:bold; }
+    .break { background:#ddd; }
+    .subject { background:#fff59d; cursor:pointer; }
+    .subject:hover { background:#ffe082; }
+    .sports { background:#ffcc80; }
+    .green { background:#a5d6a7; }
+    button { margin:15px auto; display:block; padding:8px 14px; }
+
+    /* Popup */
+    .popup { display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); }
+    .popup-content { background:#fff; width:90%; max-width:350px; margin:80px auto; padding:20px; border-radius:6px; }
+    .close { float:right; cursor:pointer; font-size:20px; }
+
+    /* Mobile */
+    @media (max-width:768px) {
+      table { font-size:11px; }
+      th, td { padding:4px; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>A1 Section – Full Weekly Timetable</h1>
+
+<table>
+<tr>
+  <th>Day</th><th>8:15–9:05</th><th>9:05–9:55</th><th>9:55–10:10</th>
+  <th>10:10–11:00</th><th>11:00–11:50</th><th>11:50–12:45</th>
+  <th>12:45–1:30</th><th>1:30–2:20</th><th>2:20–3:10</th><th>3:10–4:00</th>
+</tr>
+
+<tr>
+<td class="day">MON</td>
+<td class="subject" data-subject="MO" data-faculty="Dr. Sushma Rani" data-time="8:15–9:55" data-duration="1h 40m">II-MO</td>
+<td class="subject" data-subject="MO" data-faculty="Dr. Sushma Rani" data-time="8:15–9:55" data-duration="1h 40m">II-MO</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="CN" data-faculty="Dr. Narasimha" data-time="10:10–11:50" data-duration="1h 40m">II-CN (P)</td>
+<td class="subject" data-subject="CN" data-faculty="Dr. Narasimha" data-time="10:10–11:50" data-duration="1h 40m">II-CN (P)</td>
+<td class="break">BREAK</td>
+<td class="sports">SPORTS</td>
+<td class="sports">SPORTS</td>
+<td class="subject" data-subject="CTI" data-faculty="Dr. Lalitha" data-time="2:20–4:00" data-duration="1h 40m">II-CTI (P)</td>
+<td class="subject" data-subject="CTI" data-faculty="Dr. Lalitha" data-time="2:20–4:00" data-duration="1h 40m">II-CTI (P)</td>
+</tr>
+
+<tr>
+<td class="day">TUE</td>
+<td class="subject" data-subject="DAA" data-faculty="Dr. Saidirddy" data-time="8:15–9:55" data-duration="1h 40m">II-DAA</td>
+<td class="subject" data-subject="DAA" data-faculty="Dr. Saidirddy" data-time="8:15–9:55" data-duration="1h 40m">II-DAA</td>
+<td class="break">BREAK</td>
+<td colspan="2" class="green">GLOBAL CERTIFICATION</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="PDNC" data-faculty="Dr. A Mousmika" data-time="11:50–1:30" data-duration="1h 40m">II-PDNC (P)</td>
+<td class="subject" data-subject="PDNC" data-faculty="Dr. A Mousmika" data-time="11:50–1:30" data-duration="1h 40m">II-PDNC (P)</td>
+<td class="subject" data-subject="FSAD" data-faculty="Ms P Sree Lakshmi" data-time="1:30–3:10" data-duration="1h 40m">II-FSAD</td>
+<td class="subject" data-subject="FSAD" data-faculty="Ms P Sree Lakshmi" data-time="1:30–3:10" data-duration="1h 40m">II-FSAD</td>
+</tr>
+<tr>
+<td class="day">WED</td>
+<td class="subject" data-subject="CRT" data-faculty="CRT Trainer" data-time="8:15–9:55" data-duration="1h 40m">CRT</td>
+<td class="subject" data-subject="CRT" data-faculty="CRT Trainer" data-time="8:15–9:55" data-duration="1h 40m">CRT</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="CRT" data-faculty="CRT Trainer" data-time="10:10–11:50" data-duration="1h 40m">CRT</td>
+<td class="subject" data-subject="CRT" data-faculty="CRT Trainer" data-time="10:10–11:50" data-duration="1h 40m">CRT</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="CRT" data-faculty="CRT Trainer" data-time="12:45–4:00" data-duration="3h 15m">CRT</td>
+<td class="subject" data-subject="CRT" data-faculty="CRT Trainer" data-time="12:45–4:00" data-duration="3h 15m">CRT</td>
+<td class="subject" data-subject="CRT" data-faculty="CRT Trainer" data-time="12:45–4:00" data-duration="3h 15m">CRT</td>
+<td class="subject" data-subject="CRT" data-faculty="CRT Trainer" data-time="12:45–4:00" data-duration="3h 15m">CRT</td>
+</tr>
+
+<tr>
+<td class="day">THU</td>
+<td class="subject" data-subject="CTI" data-faculty="Dr. Lalitha" data-time="8:15–9:55" data-duration="1h 40m">II-CTI</td>
+<td class="subject" data-subject="CTI" data-faculty="Dr. Lalitha" data-time="8:15–9:55" data-duration="1h 40m">II-CTI</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="FSAD" data-faculty="Ms P Sree Lakshmi" data-time="10:10–11:50" data-duration="1h 40m">II-FSAD (S)</td>
+<td class="subject" data-subject="FSAD" data-faculty="Ms P Sree Lakshmi" data-time="10:10–11:50" data-duration="1h 40m">II-FSAD (S)</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="FSAD" data-faculty="Ms P Sree Lakshmi" data-time="12:45–2:20" data-duration="1h 40m">II-FSAD (S)</td>
+<td class="subject" data-subject="FSAD" data-faculty="Ms P Sree Lakshmi" data-time="12:45–2:20" data-duration="1h 40m">II-FSAD (S)</td>
+<td class="subject" data-subject="MO" data-faculty="Dr. Sushma Rani" data-time="2:20–4:00" data-duration="1h 40m">II-MO</td>
+<td class="subject" data-subject="MO" data-faculty="Dr. Sushma Rani" data-time="2:20–4:00" data-duration="1h 40m">II-MO</td>
+</tr>
+
+<tr>
+<td class="day">FRI</td>
+<td class="subject" data-subject="PDNC" data-faculty="Dr. A Mousmika" data-time="8:15–9:55" data-duration="1h 40m">II-PDNC</td>
+<td class="subject" data-subject="PDNC" data-faculty="Dr. A Mousmika" data-time="8:15–9:55" data-duration="1h 40m">II-PDNC</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="DAA" data-faculty="Dr. Saidirddy" data-time="10:10–11:50" data-duration="1h 40m">II-DAA</td>
+<td class="subject" data-subject="DAA" data-faculty="Dr. Saidirddy" data-time="10:10–11:50" data-duration="1h 40m">II-DAA</td>
+<td class="break">BREAK</td>
+<td class="green">LIBRARY</td>
+<td class="green">LIBRARY</td>
+<td class="subject" data-subject="DAA" data-faculty="Dr. Saidirddy" data-time="1:30–3:10" data-duration="1h 40m">II-DAA (S)</td>
+<td class="subject" data-subject="DAA" data-faculty="Dr. Saidirddy" data-time="1:30–3:10" data-duration="1h 40m">II-DAA (S)</td>
+</tr>
+
+<tr>
+<td class="day">SAT</td>
+<td class="subject" data-subject="FSAD" data-faculty="Ms P Sree Lakshmi" data-time="8:15–9:55" data-duration="1h 40m">II-FSAD</td>
+<td class="subject" data-subject="FSAD" data-faculty="Ms P Sree Lakshmi" data-time="8:15–9:55" data-duration="1h 40m">II-FSAD</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="CN" data-faculty="Dr. Narasimha" data-time="10:10–11:50" data-duration="1h 40m">II-CN</td>
+<td class="subject" data-subject="CN" data-faculty="Dr. Narasimha" data-time="10:10–11:50" data-duration="1h 40m">II-CN</td>
+<td class="break">BREAK</td>
+<td class="subject" data-subject="DAA" data-faculty="Dr. Saidirddy" data-time="11:50–1:30" data-duration="1h 40m">II-DAA (P)</td>
+<td class="subject" data-subject="DAA" data-faculty="Dr. Saidirddy" data-time="11:50–1:30" data-duration="1h 40m">II-DAA (P)</td>
+<td class="green">GLOBAL LOGIC</td>
+<td class="green">GLOBAL LOGIC</td>
+</tr>
+
+</table>
+
+<button onclick="openFaculty()">View Faculty Table</button>
+
+<!-- Subject Popup -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h3 id="psub"></h3>
+    <p><b>Faculty:</b> <span id="pfac"></span></p>
+    <p><b>Time:</b> <span id="ptime"></span></p>
+    <p><b>Duration:</b> <span id="pdur"></span></p>
+  </div>
+</div>
+
+<!-- Faculty Popup -->
+<div id="faculty" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeFaculty()">&times;</span>
+    <h3>Faculty Details</h3>
+    <p><b>MO:</b> Dr. Sushma Rani</p>
+    <p><b>FSAD:</b> Ms P Sree Lakshmi</p>
+    <p><b>DAA:</b> Dr. Saidirddy</p>
+    <p><b>CN:</b> Dr. Narasimha</p>
+    <p><b>PDNC:</b> Dr. A Mousmika</p>
+    <p><b>CTI:</b> Dr. Lalitha</p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.subject').forEach(s => {
+    s.onclick = () => {
+      document.getElementById('psub').innerText = s.dataset.subject;
+      document.getElementById('pfac').innerText = s.dataset.faculty;
+      document.getElementById('ptime').innerText = s.dataset.time;
+      document.getElementById('pdur').innerText = s.dataset.duration;
+      document.getElementById('popup').style.display = 'block';
+    }
+  });
+  function closePopup(){ document.getElementById('popup').style.display='none'; }
+  function openFaculty(){ document.getElementById('faculty').style.display='block'; }
+  function closeFaculty(){ document.getElementById('faculty').style.display='none'; }
+</script>
+
+</body>
+</html>

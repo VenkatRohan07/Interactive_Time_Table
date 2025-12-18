@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  background: #fff;
+}
+
+th, td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: center;
+  font-size: 13px;
+}
+
+th {
+  background: #eaeaea;
+}
+
+.day {
+  font-weight: bold;
+  background: #f0f0f0;
+}
+
+.break {
+  background: #ddd;
+}
+
+.subject {
+  background: #fff59d;
+  cursor: pointer;
+}
+
+.subject:hover {
+  background: #ffe082;
+}
+
+.sports {
+  background: #ffcc80;
+}
+
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+  background: #fff;
+  width: 300px;
+  margin: 120px auto;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+#close {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
